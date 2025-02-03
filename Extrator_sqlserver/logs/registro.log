@@ -257,3 +257,395 @@
 2025-01-31 18:16:19,526 - INFO     - [main.py:79] Tabela de atualização enviada com sucesso!
 2025-01-31 18:16:19,768 - INFO     - [main.py:227] Diretório temporário removido.
 2025-01-31 18:16:19,768 - INFO     - [main.py:230] Sistema encerrado às 31/01/2025 18:16:19
+2025-02-01 22:20:17,012 - INFO     - [logging_config.py:91]  Sistema iniciado no modo: local
+2025-02-01 22:20:18,340 - INFO     - [main.py:97] Sistema iniciado às 01/02/2025 22:20:18
+2025-02-01 22:20:18,460 - INFO     - [mongo.py:42] Conectando ao MongoDB...
+2025-02-01 22:20:20,110 - INFO     - [mongo.py:59] Parâmetros obtidos com sucesso do MongoDB para o cliente 'AdrianoH-SqlServer-Ambos'.
+2025-02-01 22:20:20,278 - INFO     - [mongo.py:75] Conectando ao MongoDB...
+2025-02-01 22:20:21,771 - INFO     - [mongo.py:86] Parâmetros obtidos com sucesso do MongoDB: 1 documentos encontrados.
+2025-02-01 22:20:21,925 - INFO     - [config.py:216] Configurando conexão com o banco de dados a partir dos parâmetros.
+2025-02-01 22:20:21,926 - INFO     - [config.py:235] Configurando quantidade de linhas por consulta a partir dos parâmetros.
+2025-02-01 22:20:21,926 - INFO     - [config.py:248] Configurando numero de workers a partir dos parâmetros.
+2025-02-01 22:20:21,927 - INFO     - [main.py:133] Os dados serão enviados para **Azure Blob Storage** no container 'adriano-teste' e para **Amazon S3** no bucket 'docker-teste'.
+2025-02-01 22:20:21,927 - INFO     - [main.py:136] Executando com 1 threads.
+2025-02-01 22:20:21,928 - INFO     - [database.py:40] Conectando ao banco de dados SQL Server...
+2025-02-01 22:20:22,588 - INFO     - [database.py:44] Conexão com o banco de dados SQL Server estabelecida com sucesso.
+2025-02-01 22:20:22,589 - INFO     - [database.py:156] Executando consulta: Clientes...
+2025-02-01 22:20:23,954 - INFO     - [database.py:166] Consulta 'Clientes' finalizada. Total de registros: 41383
+2025-02-01 22:20:23,954 - INFO     - [database.py:200] Processando dados da consulta 'Clientes'...
+2025-02-01 22:20:24,005 - INFO     - [dicionario_dados.py:54] Dicionário de tipos carregado com sucesso.
+2025-02-01 22:20:24,006 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Clientes
+2025-02-01 22:20:24,016 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoCliente' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:24,025 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoClienteVisual' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:24,039 - INFO     - [dicionario_dados.py:144] [Consulta: Clientes] Tipos ajustados com sucesso.
+2025-02-01 22:20:24,039 - INFO     - [database.py:251] Salvando 'Clientes' em formato particionado...
+2025-02-01 22:20:24,262 - INFO     - [database.py:156] Executando consulta: CodigoBarras...
+2025-02-01 22:20:24,705 - INFO     - [database.py:166] Consulta 'CodigoBarras' finalizada. Total de registros: 174724
+2025-02-01 22:20:24,706 - INFO     - [database.py:200] Processando dados da consulta 'CodigoBarras'...
+2025-02-01 22:20:24,717 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: CodigoBarras
+2025-02-01 22:20:24,721 - INFO     - [dicionario_dados.py:144] [Consulta: CodigoBarras] Tipos ajustados com sucesso.
+2025-02-01 22:20:24,722 - INFO     - [database.py:251] Salvando 'CodigoBarras' em formato particionado...
+2025-02-01 22:20:24,779 - INFO     - [database.py:156] Executando consulta: Compras...
+2025-02-01 22:20:33,657 - INFO     - [database.py:166] Consulta 'Compras' finalizada. Total de registros: 421415
+2025-02-01 22:20:33,658 - INFO     - [database.py:200] Processando dados da consulta 'Compras'...
+2025-02-01 22:20:33,751 - INFO     - [database.py:225] Gerando partição AnoMesDia com base na coluna 'DataEmissaoNF'
+2025-02-01 22:20:33,844 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Compras
+2025-02-01 22:20:33,929 - INFO     - [dicionario_dados.py:114] Coluna 'Fracao' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:34,013 - INFO     - [dicionario_dados.py:114] Coluna 'Quantidade' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:34,187 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoTransferencia' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:34,196 - INFO     - [dicionario_dados.py:114] Coluna 'OrigemTransferencia' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:34,205 - INFO     - [dicionario_dados.py:114] Coluna 'DestinoTransfencia' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:34,400 - INFO     - [dicionario_dados.py:144] [Consulta: Compras] Tipos ajustados com sucesso.
+2025-02-01 22:20:34,400 - INFO     - [database.py:251] Salvando 'Compras' em formato particionado...
+2025-02-01 22:20:35,170 - INFO     - [database.py:156] Executando consulta: Estoque...
+2025-02-01 22:20:38,547 - INFO     - [database.py:166] Consulta 'Estoque' finalizada. Total de registros: 288088
+2025-02-01 22:20:38,548 - INFO     - [database.py:200] Processando dados da consulta 'Estoque'...
+2025-02-01 22:20:38,587 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Estoque
+2025-02-01 22:20:38,649 - INFO     - [dicionario_dados.py:114] Coluna 'QtdEstoque' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:38,775 - INFO     - [dicionario_dados.py:144] [Consulta: Estoque] Tipos ajustados com sucesso.
+2025-02-01 22:20:38,776 - INFO     - [database.py:251] Salvando 'Estoque' em formato particionado...
+2025-02-01 22:20:38,907 - INFO     - [database.py:156] Executando consulta: Fornecedores...
+2025-02-01 22:20:39,147 - INFO     - [database.py:166] Consulta 'Fornecedores' finalizada. Total de registros: 696
+2025-02-01 22:20:39,147 - INFO     - [database.py:200] Processando dados da consulta 'Fornecedores'...
+2025-02-01 22:20:39,149 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Fornecedores
+2025-02-01 22:20:39,150 - INFO     - [dicionario_dados.py:144] [Consulta: Fornecedores] Tipos ajustados com sucesso.
+2025-02-01 22:20:39,150 - INFO     - [database.py:251] Salvando 'Fornecedores' em formato particionado...
+2025-02-01 22:20:39,154 - INFO     - [database.py:156] Executando consulta: Funcionarios...
+2025-02-01 22:20:39,189 - INFO     - [database.py:166] Consulta 'Funcionarios' finalizada. Total de registros: 165
+2025-02-01 22:20:39,190 - INFO     - [database.py:200] Processando dados da consulta 'Funcionarios'...
+2025-02-01 22:20:39,191 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Funcionarios
+2025-02-01 22:20:39,192 - INFO     - [dicionario_dados.py:144] [Consulta: Funcionarios] Tipos ajustados com sucesso.
+2025-02-01 22:20:39,193 - INFO     - [database.py:251] Salvando 'Funcionarios' em formato particionado...
+2025-02-01 22:20:39,196 - INFO     - [database.py:156] Executando consulta: Produtos...
+2025-02-01 22:20:41,398 - INFO     - [database.py:166] Consulta 'Produtos' finalizada. Total de registros: 85238
+2025-02-01 22:20:41,399 - INFO     - [database.py:200] Processando dados da consulta 'Produtos'...
+2025-02-01 22:20:41,512 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Produtos
+2025-02-01 22:20:41,526 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoCategoria' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:41,547 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoLaboratorio' convertida de float64 para int64 automaticamente.
+2025-02-01 22:20:41,582 - INFO     - [dicionario_dados.py:144] [Consulta: Produtos] Tipos ajustados com sucesso.
+2025-02-01 22:20:41,583 - INFO     - [database.py:251] Salvando 'Produtos' em formato particionado...
+2025-02-01 22:20:41,741 - INFO     - [database.py:156] Executando consulta: Vendas...
+2025-02-01 22:21:21,179 - INFO     - [database.py:166] Consulta 'Vendas' finalizada. Total de registros: 1145935
+2025-02-01 22:21:21,180 - INFO     - [database.py:200] Processando dados da consulta 'Vendas'...
+2025-02-01 22:21:23,388 - INFO     - [database.py:225] Gerando partição AnoMesDia com base na coluna 'DataVenda'
+2025-02-01 22:21:23,704 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Vendas
+2025-02-01 22:21:23,997 - INFO     - [dicionario_dados.py:114] Coluna 'Quantidade' convertida de float64 para int64 automaticamente.
+2025-02-01 22:21:25,958 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoEntregador' convertida de float64 para int64 automaticamente.
+2025-02-01 22:21:26,054 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoPBM' convertida de float64 para int64 automaticamente.
+2025-02-01 22:21:26,368 - INFO     - [dicionario_dados.py:144] [Consulta: Vendas] Tipos ajustados com sucesso.
+2025-02-01 22:21:26,369 - INFO     - [database.py:251] Salvando 'Vendas' em formato particionado...
+2025-02-01 22:21:28,185 - INFO     - [database.py:59] Conexão com o banco de dados fechada.
+2025-02-01 22:21:28,186 - INFO     - [database.py:133] Conexão com o banco de dados fechada.
+2025-02-01 22:21:28,187 - INFO     - [main.py:174] Resumo das consultas concluídas:
+2025-02-01 22:21:28,187 - INFO     - [main.py:176]  - Clientes: temp\Clientes
+2025-02-01 22:21:28,187 - INFO     - [main.py:176]  - CodigoBarras: temp\CodigoBarras
+2025-02-01 22:21:28,188 - INFO     - [main.py:176]  - Compras: temp\Compras
+2025-02-01 22:21:28,188 - INFO     - [main.py:176]  - Estoque: temp\Estoque
+2025-02-01 22:21:28,189 - INFO     - [main.py:176]  - Fornecedores: temp\Fornecedores
+2025-02-01 22:21:28,189 - INFO     - [main.py:176]  - Funcionarios: temp\Funcionarios
+2025-02-01 22:21:28,189 - INFO     - [main.py:176]  - Produtos: temp\Produtos
+2025-02-01 22:21:28,190 - INFO     - [main.py:176]  - Vendas: temp\Vendas
+2025-02-01 22:21:28,190 - INFO     - [main.py:183] Iniciando envio da consulta 'Clientes'...
+2025-02-01 22:21:28,190 - INFO     - [storage.py:25] Iniciando envio da consulta 'Clientes' para 'ambos'.
+2025-02-01 22:21:28,484 - INFO     - [azure_storage.py:31] Conexão com o Azure inicializada com sucesso (cliente síncrono).
+2025-02-01 22:21:29,267 - INFO     - [azure_storage.py:202] [Clientes] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Clientes'.
+2025-02-01 22:21:29,269 - INFO     - [azure_storage.py:283] [Clientes] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:21:31,443 - INFO     - [azure_storage.py:299] [Clientes] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:21:31,445 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Clientes' enviados para Azure com sucesso.
+2025-02-01 22:21:31,522 - INFO     - [s3_storage.py:31] Conexão com o S3 inicializada com sucesso.
+2025-02-01 22:21:32,399 - INFO     - [s3_storage.py:226] [Clientes] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Clientes'.
+2025-02-01 22:21:32,461 - INFO     - [s3_storage.py:302] [Clientes] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:21:35,185 - INFO     - [s3_storage.py:317] [Clientes] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:21:35,187 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Clientes' enviados para S3 com sucesso.
+2025-02-01 22:21:35,188 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Clientes' foram enviados com sucesso.
+2025-02-01 22:21:35,189 - INFO     - [main.py:192] Consulta 'Clientes' enviada com sucesso.
+2025-02-01 22:21:35,190 - INFO     - [main.py:183] Iniciando envio da consulta 'CodigoBarras'...
+2025-02-01 22:21:35,190 - INFO     - [storage.py:25] Iniciando envio da consulta 'CodigoBarras' para 'ambos'.
+2025-02-01 22:21:35,465 - INFO     - [azure_storage.py:202] [CodigoBarras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/CodigoBarras'.
+2025-02-01 22:21:35,467 - INFO     - [azure_storage.py:283] [CodigoBarras] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:21:37,187 - INFO     - [azure_storage.py:299] [CodigoBarras] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:21:37,189 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/CodigoBarras' enviados para Azure com sucesso.
+2025-02-01 22:21:37,369 - INFO     - [s3_storage.py:226] [CodigoBarras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/CodigoBarras'.
+2025-02-01 22:21:37,432 - INFO     - [s3_storage.py:302] [CodigoBarras] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:21:39,590 - INFO     - [s3_storage.py:317] [CodigoBarras] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:21:39,592 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/CodigoBarras' enviados para S3 com sucesso.
+2025-02-01 22:21:39,593 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/CodigoBarras' foram enviados com sucesso.
+2025-02-01 22:21:39,593 - INFO     - [main.py:192] Consulta 'CodigoBarras' enviada com sucesso.
+2025-02-01 22:21:39,594 - INFO     - [main.py:183] Iniciando envio da consulta 'Compras'...
+2025-02-01 22:21:39,594 - INFO     - [storage.py:25] Iniciando envio da consulta 'Compras' para 'ambos'.
+2025-02-01 22:21:46,952 - INFO     - [azure_storage.py:202] [Compras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Compras'.
+2025-02-01 22:21:46,970 - INFO     - [azure_storage.py:283] [Compras] Iniciando upload de 728 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:21:50,734 - INFO     - [azure_storage.py:299] [Compras] Upload concluído. Enviados: 728, Erros: 0
+2025-02-01 22:21:50,741 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Compras' enviados para Azure com sucesso.
+2025-02-01 22:21:51,698 - INFO     - [s3_storage.py:226] [Compras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Compras'.
+2025-02-01 22:21:51,787 - INFO     - [s3_storage.py:302] [Compras] Iniciando upload de 728 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:22:19,497 - INFO     - [s3_storage.py:317] [Compras] Upload concluído. Enviados: 728, Erros: 0
+2025-02-01 22:22:19,501 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Compras' enviados para S3 com sucesso.
+2025-02-01 22:22:19,502 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Compras' foram enviados com sucesso.
+2025-02-01 22:22:19,503 - INFO     - [main.py:192] Consulta 'Compras' enviada com sucesso.
+2025-02-01 22:22:19,503 - INFO     - [main.py:183] Iniciando envio da consulta 'Estoque'...
+2025-02-01 22:22:19,503 - INFO     - [storage.py:25] Iniciando envio da consulta 'Estoque' para 'ambos'.
+2025-02-01 22:22:19,794 - INFO     - [azure_storage.py:202] [Estoque] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Estoque'.
+2025-02-01 22:22:19,795 - INFO     - [azure_storage.py:283] [Estoque] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:22:21,996 - INFO     - [azure_storage.py:299] [Estoque] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:22:21,997 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Estoque' enviados para Azure com sucesso.
+2025-02-01 22:22:22,729 - INFO     - [s3_storage.py:226] [Estoque] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Estoque'.
+2025-02-01 22:22:22,785 - INFO     - [s3_storage.py:302] [Estoque] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:22:25,632 - INFO     - [s3_storage.py:317] [Estoque] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:22:25,634 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Estoque' enviados para S3 com sucesso.
+2025-02-01 22:22:25,635 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Estoque' foram enviados com sucesso.
+2025-02-01 22:22:25,635 - INFO     - [main.py:192] Consulta 'Estoque' enviada com sucesso.
+2025-02-01 22:22:25,636 - INFO     - [main.py:183] Iniciando envio da consulta 'Fornecedores'...
+2025-02-01 22:22:25,636 - INFO     - [storage.py:25] Iniciando envio da consulta 'Fornecedores' para 'ambos'.
+2025-02-01 22:22:25,920 - INFO     - [azure_storage.py:202] [Fornecedores] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Fornecedores'.
+2025-02-01 22:22:25,921 - INFO     - [azure_storage.py:283] [Fornecedores] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:22:26,647 - INFO     - [azure_storage.py:299] [Fornecedores] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:22:26,649 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Fornecedores' enviados para Azure com sucesso.
+2025-02-01 22:22:26,828 - INFO     - [s3_storage.py:226] [Fornecedores] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Fornecedores'.
+2025-02-01 22:22:26,894 - INFO     - [s3_storage.py:302] [Fornecedores] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:22:27,913 - INFO     - [s3_storage.py:317] [Fornecedores] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:22:27,915 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Fornecedores' enviados para S3 com sucesso.
+2025-02-01 22:22:27,916 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Fornecedores' foram enviados com sucesso.
+2025-02-01 22:22:27,916 - INFO     - [main.py:192] Consulta 'Fornecedores' enviada com sucesso.
+2025-02-01 22:22:27,917 - INFO     - [main.py:183] Iniciando envio da consulta 'Funcionarios'...
+2025-02-01 22:22:27,917 - INFO     - [storage.py:25] Iniciando envio da consulta 'Funcionarios' para 'ambos'.
+2025-02-01 22:22:28,199 - INFO     - [azure_storage.py:202] [Funcionarios] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Funcionarios'.
+2025-02-01 22:22:28,201 - INFO     - [azure_storage.py:283] [Funcionarios] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:22:28,835 - INFO     - [azure_storage.py:299] [Funcionarios] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:22:28,837 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Funcionarios' enviados para Azure com sucesso.
+2025-02-01 22:22:29,013 - INFO     - [s3_storage.py:226] [Funcionarios] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Funcionarios'.
+2025-02-01 22:22:29,069 - INFO     - [s3_storage.py:302] [Funcionarios] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:25:19,775 - INFO     - [logging_config.py:91]  Sistema iniciado no modo: local
+2025-02-01 22:25:19,811 - INFO     - [main.py:97] Sistema iniciado às 01/02/2025 22:25:19
+2025-02-01 22:25:20,093 - INFO     - [main.py:100] Diretório temporário removido.
+2025-02-01 22:25:20,190 - INFO     - [mongo.py:42] Conectando ao MongoDB...
+2025-02-01 22:25:21,836 - INFO     - [mongo.py:59] Parâmetros obtidos com sucesso do MongoDB para o cliente 'AdrianoH-SqlServer-Ambos'.
+2025-02-01 22:25:22,031 - INFO     - [mongo.py:75] Conectando ao MongoDB...
+2025-02-01 22:25:23,525 - INFO     - [mongo.py:86] Parâmetros obtidos com sucesso do MongoDB: 1 documentos encontrados.
+2025-02-01 22:25:23,678 - INFO     - [config.py:216] Configurando conexão com o banco de dados a partir dos parâmetros.
+2025-02-01 22:25:23,679 - INFO     - [config.py:235] Configurando quantidade de linhas por consulta a partir dos parâmetros.
+2025-02-01 22:25:23,679 - INFO     - [config.py:248] Configurando numero de workers a partir dos parâmetros.
+2025-02-01 22:25:23,680 - INFO     - [main.py:133] Os dados serão enviados para **Azure Blob Storage** no container 'adriano-teste' e para **Amazon S3** no bucket 'docker-teste'.
+2025-02-01 22:25:23,680 - INFO     - [main.py:136] Executando com 1 threads.
+2025-02-01 22:25:23,681 - INFO     - [database.py:40] Conectando ao banco de dados SQL Server...
+2025-02-01 22:25:23,989 - INFO     - [database.py:44] Conexão com o banco de dados SQL Server estabelecida com sucesso.
+2025-02-01 22:25:24,956 - INFO     - [database.py:99] Consulta 'Clientes' processada em 0.97 segundos.
+2025-02-01 22:25:24,956 - INFO     - [database.py:140] Executando consulta: Clientes...
+2025-02-01 22:25:25,886 - INFO     - [database.py:146] Consulta 'Clientes' finalizada. Total de registros: 41383
+2025-02-01 22:25:25,887 - INFO     - [database.py:169] Processando dados da consulta 'Clientes'...
+2025-02-01 22:25:25,943 - INFO     - [dicionario_dados.py:54] Dicionário de tipos carregado com sucesso.
+2025-02-01 22:25:25,943 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Clientes
+2025-02-01 22:25:25,954 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoCliente' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:25,964 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoClienteVisual' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:25,977 - INFO     - [dicionario_dados.py:144] [Consulta: Clientes] Tipos ajustados com sucesso.
+2025-02-01 22:25:25,978 - INFO     - [database.py:203] Salvando 'Clientes' em formato particionado...
+2025-02-01 22:25:26,060 - INFO     - [database.py:213] Salvamento concluído para 'Clientes'. Arquivos disponíveis em: temp\Clientes
+2025-02-01 22:25:26,483 - INFO     - [database.py:99] Consulta 'CodigoBarras' processada em 0.40 segundos.
+2025-02-01 22:25:26,483 - INFO     - [database.py:140] Executando consulta: CodigoBarras...
+2025-02-01 22:25:26,901 - INFO     - [database.py:146] Consulta 'CodigoBarras' finalizada. Total de registros: 174724
+2025-02-01 22:25:26,902 - INFO     - [database.py:169] Processando dados da consulta 'CodigoBarras'...
+2025-02-01 22:25:26,916 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: CodigoBarras
+2025-02-01 22:25:26,921 - INFO     - [dicionario_dados.py:144] [Consulta: CodigoBarras] Tipos ajustados com sucesso.
+2025-02-01 22:25:26,921 - INFO     - [database.py:203] Salvando 'CodigoBarras' em formato particionado...
+2025-02-01 22:25:26,979 - INFO     - [database.py:213] Salvamento concluído para 'CodigoBarras'. Arquivos disponíveis em: temp\CodigoBarras
+2025-02-01 22:25:35,060 - INFO     - [database.py:99] Consulta 'Compras' processada em 8.07 segundos.
+2025-02-01 22:25:35,061 - INFO     - [database.py:140] Executando consulta: Compras...
+2025-02-01 22:25:44,169 - INFO     - [database.py:146] Consulta 'Compras' finalizada. Total de registros: 421415
+2025-02-01 22:25:44,170 - INFO     - [database.py:169] Processando dados da consulta 'Compras'...
+2025-02-01 22:25:44,381 - INFO     - [database.py:197] Amostra das partições para 'Compras':
+ Ano Mes Dia
+2024  01  16
+2023  05  09
+2024  09  27
+2023  05  05
+2023  10  24
+2025-02-01 22:25:44,382 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Compras
+2025-02-01 22:25:44,493 - INFO     - [dicionario_dados.py:114] Coluna 'Fracao' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:44,597 - INFO     - [dicionario_dados.py:114] Coluna 'Quantidade' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:44,802 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoTransferencia' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:44,814 - INFO     - [dicionario_dados.py:114] Coluna 'OrigemTransferencia' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:44,825 - INFO     - [dicionario_dados.py:114] Coluna 'DestinoTransfencia' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:44,988 - INFO     - [dicionario_dados.py:144] [Consulta: Compras] Tipos ajustados com sucesso.
+2025-02-01 22:25:44,989 - INFO     - [database.py:203] Salvando 'Compras' em formato particionado...
+2025-02-01 22:25:45,696 - INFO     - [database.py:213] Salvamento concluído para 'Compras'. Arquivos disponíveis em: temp\Compras
+2025-02-01 22:25:48,387 - INFO     - [database.py:99] Consulta 'Estoque' processada em 2.62 segundos.
+2025-02-01 22:25:48,388 - INFO     - [database.py:140] Executando consulta: Estoque...
+2025-02-01 22:25:51,909 - INFO     - [database.py:146] Consulta 'Estoque' finalizada. Total de registros: 288088
+2025-02-01 22:25:51,910 - INFO     - [database.py:169] Processando dados da consulta 'Estoque'...
+2025-02-01 22:25:51,947 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Estoque
+2025-02-01 22:25:52,012 - INFO     - [dicionario_dados.py:114] Coluna 'QtdEstoque' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:52,153 - INFO     - [dicionario_dados.py:144] [Consulta: Estoque] Tipos ajustados com sucesso.
+2025-02-01 22:25:52,154 - INFO     - [database.py:203] Salvando 'Estoque' em formato particionado...
+2025-02-01 22:25:52,285 - INFO     - [database.py:213] Salvamento concluído para 'Estoque'. Arquivos disponíveis em: temp\Estoque
+2025-02-01 22:25:52,445 - INFO     - [database.py:99] Consulta 'Fornecedores' processada em 0.14 segundos.
+2025-02-01 22:25:52,446 - INFO     - [database.py:140] Executando consulta: Fornecedores...
+2025-02-01 22:25:52,597 - INFO     - [database.py:146] Consulta 'Fornecedores' finalizada. Total de registros: 696
+2025-02-01 22:25:52,598 - INFO     - [database.py:169] Processando dados da consulta 'Fornecedores'...
+2025-02-01 22:25:52,599 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Fornecedores
+2025-02-01 22:25:52,600 - INFO     - [dicionario_dados.py:144] [Consulta: Fornecedores] Tipos ajustados com sucesso.
+2025-02-01 22:25:52,601 - INFO     - [database.py:203] Salvando 'Fornecedores' em formato particionado...
+2025-02-01 22:25:52,604 - INFO     - [database.py:213] Salvamento concluído para 'Fornecedores'. Arquivos disponíveis em: temp\Fornecedores
+2025-02-01 22:25:52,633 - INFO     - [database.py:99] Consulta 'Funcionarios' processada em 0.03 segundos.
+2025-02-01 22:25:52,634 - INFO     - [database.py:140] Executando consulta: Funcionarios...
+2025-02-01 22:25:52,662 - INFO     - [database.py:146] Consulta 'Funcionarios' finalizada. Total de registros: 165
+2025-02-01 22:25:52,663 - INFO     - [database.py:169] Processando dados da consulta 'Funcionarios'...
+2025-02-01 22:25:52,664 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Funcionarios
+2025-02-01 22:25:52,665 - INFO     - [dicionario_dados.py:144] [Consulta: Funcionarios] Tipos ajustados com sucesso.
+2025-02-01 22:25:52,665 - INFO     - [database.py:203] Salvando 'Funcionarios' em formato particionado...
+2025-02-01 22:25:52,668 - INFO     - [database.py:213] Salvamento concluído para 'Funcionarios'. Arquivos disponíveis em: temp\Funcionarios
+2025-02-01 22:25:54,787 - INFO     - [database.py:99] Consulta 'Produtos' processada em 2.12 segundos.
+2025-02-01 22:25:54,788 - INFO     - [database.py:140] Executando consulta: Produtos...
+2025-02-01 22:25:56,983 - INFO     - [database.py:146] Consulta 'Produtos' finalizada. Total de registros: 85238
+2025-02-01 22:25:56,984 - INFO     - [database.py:169] Processando dados da consulta 'Produtos'...
+2025-02-01 22:25:57,069 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Produtos
+2025-02-01 22:25:57,081 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoCategoria' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:57,098 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoLaboratorio' convertida de float64 para int64 automaticamente.
+2025-02-01 22:25:57,119 - INFO     - [dicionario_dados.py:144] [Consulta: Produtos] Tipos ajustados com sucesso.
+2025-02-01 22:25:57,119 - INFO     - [database.py:203] Salvando 'Produtos' em formato particionado...
+2025-02-01 22:25:57,220 - INFO     - [database.py:213] Salvamento concluído para 'Produtos'. Arquivos disponíveis em: temp\Produtos
+2025-02-01 22:26:33,091 - INFO     - [database.py:99] Consulta 'Vendas' processada em 35.83 segundos.
+2025-02-01 22:26:33,092 - INFO     - [database.py:140] Executando consulta: Vendas...
+2025-02-01 22:27:10,751 - INFO     - [database.py:146] Consulta 'Vendas' finalizada. Total de registros: 1145937
+2025-02-01 22:27:10,752 - INFO     - [database.py:169] Processando dados da consulta 'Vendas'...
+2025-02-01 22:27:12,572 - INFO     - [database.py:197] Amostra das partições para 'Vendas':
+ Ano Mes Dia
+2023  05  27
+2024  11  07
+2023  09  15
+2024  12  03
+2023  07  12
+2025-02-01 22:27:12,573 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Vendas
+2025-02-01 22:27:12,837 - INFO     - [dicionario_dados.py:114] Coluna 'Quantidade' convertida de float64 para int64 automaticamente.
+2025-02-01 22:27:14,127 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoEntregador' convertida de float64 para int64 automaticamente.
+2025-02-01 22:27:14,187 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoPBM' convertida de float64 para int64 automaticamente.
+2025-02-01 22:27:14,336 - INFO     - [dicionario_dados.py:144] [Consulta: Vendas] Tipos ajustados com sucesso.
+2025-02-01 22:27:14,337 - INFO     - [database.py:203] Salvando 'Vendas' em formato particionado...
+2025-02-01 22:27:15,642 - INFO     - [database.py:213] Salvamento concluído para 'Vendas'. Arquivos disponíveis em: temp\Vendas
+2025-02-01 22:27:16,278 - INFO     - [database.py:59] Conexão com o banco de dados fechada.
+2025-02-01 22:27:16,278 - INFO     - [database.py:127] Conexão com o banco de dados fechada (sequencial).
+2025-02-01 22:27:16,279 - INFO     - [main.py:174] Resumo das consultas concluídas:
+2025-02-01 22:27:16,279 - INFO     - [main.py:176]  - Clientes: temp\Clientes
+2025-02-01 22:27:16,280 - INFO     - [main.py:176]  - CodigoBarras: temp\CodigoBarras
+2025-02-01 22:27:16,280 - INFO     - [main.py:176]  - Compras: temp\Compras
+2025-02-01 22:27:16,280 - INFO     - [main.py:176]  - Estoque: temp\Estoque
+2025-02-01 22:27:16,281 - INFO     - [main.py:176]  - Fornecedores: temp\Fornecedores
+2025-02-01 22:27:16,281 - INFO     - [main.py:176]  - Funcionarios: temp\Funcionarios
+2025-02-01 22:27:16,281 - INFO     - [main.py:176]  - Produtos: temp\Produtos
+2025-02-01 22:27:16,282 - INFO     - [main.py:176]  - Vendas: temp\Vendas
+2025-02-01 22:27:16,282 - INFO     - [main.py:183] Iniciando envio da consulta 'Clientes'...
+2025-02-01 22:27:16,283 - INFO     - [storage.py:25] Iniciando envio da consulta 'Clientes' para 'ambos'.
+2025-02-01 22:27:16,566 - INFO     - [azure_storage.py:31] Conexão com o Azure inicializada com sucesso (cliente síncrono).
+2025-02-01 22:27:17,292 - INFO     - [azure_storage.py:202] [Clientes] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Clientes'.
+2025-02-01 22:27:17,293 - INFO     - [azure_storage.py:283] [Clientes] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:27:19,400 - INFO     - [azure_storage.py:299] [Clientes] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:27:19,402 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Clientes' enviados para Azure com sucesso.
+2025-02-01 22:27:19,551 - INFO     - [s3_storage.py:31] Conexão com o S3 inicializada com sucesso.
+2025-02-01 22:27:20,231 - INFO     - [s3_storage.py:226] [Clientes] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Clientes'.
+2025-02-01 22:27:20,285 - INFO     - [s3_storage.py:302] [Clientes] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:27:23,171 - INFO     - [s3_storage.py:317] [Clientes] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:27:23,173 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Clientes' enviados para S3 com sucesso.
+2025-02-01 22:27:23,174 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Clientes' foram enviados com sucesso.
+2025-02-01 22:27:23,175 - INFO     - [main.py:192] Consulta 'Clientes' enviada com sucesso.
+2025-02-01 22:27:23,175 - INFO     - [main.py:183] Iniciando envio da consulta 'CodigoBarras'...
+2025-02-01 22:27:23,176 - INFO     - [storage.py:25] Iniciando envio da consulta 'CodigoBarras' para 'ambos'.
+2025-02-01 22:27:23,452 - INFO     - [azure_storage.py:202] [CodigoBarras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/CodigoBarras'.
+2025-02-01 22:27:23,453 - INFO     - [azure_storage.py:283] [CodigoBarras] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:27:25,196 - INFO     - [azure_storage.py:299] [CodigoBarras] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:27:25,198 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/CodigoBarras' enviados para Azure com sucesso.
+2025-02-01 22:27:25,377 - INFO     - [s3_storage.py:226] [CodigoBarras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/CodigoBarras'.
+2025-02-01 22:27:25,432 - INFO     - [s3_storage.py:302] [CodigoBarras] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:27:27,648 - INFO     - [s3_storage.py:317] [CodigoBarras] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:27:27,650 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/CodigoBarras' enviados para S3 com sucesso.
+2025-02-01 22:27:27,651 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/CodigoBarras' foram enviados com sucesso.
+2025-02-01 22:27:27,651 - INFO     - [main.py:192] Consulta 'CodigoBarras' enviada com sucesso.
+2025-02-01 22:27:27,652 - INFO     - [main.py:183] Iniciando envio da consulta 'Compras'...
+2025-02-01 22:27:27,652 - INFO     - [storage.py:25] Iniciando envio da consulta 'Compras' para 'ambos'.
+2025-02-01 22:27:31,700 - INFO     - [azure_storage.py:202] [Compras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Compras'.
+2025-02-01 22:27:31,723 - INFO     - [azure_storage.py:283] [Compras] Iniciando upload de 728 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:27:35,652 - INFO     - [azure_storage.py:299] [Compras] Upload concluído. Enviados: 728, Erros: 0
+2025-02-01 22:27:35,662 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Compras' enviados para Azure com sucesso.
+2025-02-01 22:27:36,642 - INFO     - [s3_storage.py:226] [Compras] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Compras'.
+2025-02-01 22:27:36,715 - INFO     - [s3_storage.py:302] [Compras] Iniciando upload de 728 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:28:05,035 - INFO     - [s3_storage.py:317] [Compras] Upload concluído. Enviados: 728, Erros: 0
+2025-02-01 22:28:05,039 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Compras' enviados para S3 com sucesso.
+2025-02-01 22:28:05,039 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Compras' foram enviados com sucesso.
+2025-02-01 22:28:05,040 - INFO     - [main.py:192] Consulta 'Compras' enviada com sucesso.
+2025-02-01 22:28:05,040 - INFO     - [main.py:183] Iniciando envio da consulta 'Estoque'...
+2025-02-01 22:28:05,041 - INFO     - [storage.py:25] Iniciando envio da consulta 'Estoque' para 'ambos'.
+2025-02-01 22:28:05,340 - INFO     - [azure_storage.py:202] [Estoque] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Estoque'.
+2025-02-01 22:28:05,342 - INFO     - [azure_storage.py:283] [Estoque] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:28:07,720 - INFO     - [azure_storage.py:299] [Estoque] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:07,722 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Estoque' enviados para Azure com sucesso.
+2025-02-01 22:28:08,427 - INFO     - [s3_storage.py:226] [Estoque] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Estoque'.
+2025-02-01 22:28:08,493 - INFO     - [s3_storage.py:302] [Estoque] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:28:11,676 - INFO     - [s3_storage.py:317] [Estoque] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:11,678 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Estoque' enviados para S3 com sucesso.
+2025-02-01 22:28:11,679 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Estoque' foram enviados com sucesso.
+2025-02-01 22:28:11,679 - INFO     - [main.py:192] Consulta 'Estoque' enviada com sucesso.
+2025-02-01 22:28:11,680 - INFO     - [main.py:183] Iniciando envio da consulta 'Fornecedores'...
+2025-02-01 22:28:11,680 - INFO     - [storage.py:25] Iniciando envio da consulta 'Fornecedores' para 'ambos'.
+2025-02-01 22:28:11,956 - INFO     - [azure_storage.py:202] [Fornecedores] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Fornecedores'.
+2025-02-01 22:28:11,958 - INFO     - [azure_storage.py:283] [Fornecedores] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:28:12,678 - INFO     - [azure_storage.py:299] [Fornecedores] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:12,680 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Fornecedores' enviados para Azure com sucesso.
+2025-02-01 22:28:12,854 - INFO     - [s3_storage.py:226] [Fornecedores] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Fornecedores'.
+2025-02-01 22:28:12,919 - INFO     - [s3_storage.py:302] [Fornecedores] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:28:13,962 - INFO     - [s3_storage.py:317] [Fornecedores] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:13,964 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Fornecedores' enviados para S3 com sucesso.
+2025-02-01 22:28:13,965 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Fornecedores' foram enviados com sucesso.
+2025-02-01 22:28:13,966 - INFO     - [main.py:192] Consulta 'Fornecedores' enviada com sucesso.
+2025-02-01 22:28:13,966 - INFO     - [main.py:183] Iniciando envio da consulta 'Funcionarios'...
+2025-02-01 22:28:13,967 - INFO     - [storage.py:25] Iniciando envio da consulta 'Funcionarios' para 'ambos'.
+2025-02-01 22:28:14,247 - INFO     - [azure_storage.py:202] [Funcionarios] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Funcionarios'.
+2025-02-01 22:28:14,249 - INFO     - [azure_storage.py:283] [Funcionarios] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:28:14,843 - INFO     - [azure_storage.py:299] [Funcionarios] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:14,845 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Funcionarios' enviados para Azure com sucesso.
+2025-02-01 22:28:15,021 - INFO     - [s3_storage.py:226] [Funcionarios] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Funcionarios'.
+2025-02-01 22:28:15,238 - INFO     - [s3_storage.py:302] [Funcionarios] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:28:16,166 - INFO     - [s3_storage.py:317] [Funcionarios] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:16,168 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Funcionarios' enviados para S3 com sucesso.
+2025-02-01 22:28:16,169 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Funcionarios' foram enviados com sucesso.
+2025-02-01 22:28:16,170 - INFO     - [main.py:192] Consulta 'Funcionarios' enviada com sucesso.
+2025-02-01 22:28:16,170 - INFO     - [main.py:183] Iniciando envio da consulta 'Produtos'...
+2025-02-01 22:28:16,170 - INFO     - [storage.py:25] Iniciando envio da consulta 'Produtos' para 'ambos'.
+2025-02-01 22:28:16,440 - INFO     - [azure_storage.py:202] [Produtos] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Produtos'.
+2025-02-01 22:28:16,442 - INFO     - [azure_storage.py:283] [Produtos] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:28:19,171 - INFO     - [azure_storage.py:299] [Produtos] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:19,173 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Produtos' enviados para Azure com sucesso.
+2025-02-01 22:28:19,362 - INFO     - [s3_storage.py:226] [Produtos] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Produtos'.
+2025-02-01 22:28:19,430 - INFO     - [s3_storage.py:302] [Produtos] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:28:22,684 - INFO     - [s3_storage.py:317] [Produtos] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:28:22,686 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Produtos' enviados para S3 com sucesso.
+2025-02-01 22:28:22,687 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Produtos' foram enviados com sucesso.
+2025-02-01 22:28:22,687 - INFO     - [main.py:192] Consulta 'Produtos' enviada com sucesso.
+2025-02-01 22:28:22,688 - INFO     - [main.py:183] Iniciando envio da consulta 'Vendas'...
+2025-02-01 22:28:22,688 - INFO     - [storage.py:25] Iniciando envio da consulta 'Vendas' para 'ambos'.
+2025-02-01 22:28:26,592 - INFO     - [azure_storage.py:202] [Vendas] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Vendas'.
+2025-02-01 22:28:26,616 - INFO     - [azure_storage.py:283] [Vendas] Iniciando upload de 763 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:28:31,992 - INFO     - [azure_storage.py:299] [Vendas] Upload concluído. Enviados: 763, Erros: 0
+2025-02-01 22:28:32,000 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Vendas' enviados para Azure com sucesso.
+2025-02-01 22:28:32,990 - INFO     - [s3_storage.py:226] [Vendas] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Vendas'.
+2025-02-01 22:28:33,072 - INFO     - [s3_storage.py:302] [Vendas] Iniciando upload de 763 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:29:04,804 - INFO     - [s3_storage.py:317] [Vendas] Upload concluído. Enviados: 763, Erros: 0
+2025-02-01 22:29:04,808 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Vendas' enviados para S3 com sucesso.
+2025-02-01 22:29:04,809 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Vendas' foram enviados com sucesso.
+2025-02-01 22:29:04,810 - INFO     - [main.py:192] Consulta 'Vendas' enviada com sucesso.
+2025-02-01 22:29:04,811 - INFO     - [main.py:204] Resumo do envio: 8 consultas enviadas com sucesso, 0 falhas.
+2025-02-01 22:29:04,811 - INFO     - [main.py:210] Todas as consultas foram enviadas com sucesso. Prosseguindo com a tabela de atualização...
+2025-02-01 22:29:04,812 - INFO     - [main.py:51] Criando tabela de atualização...
+2025-02-01 22:29:04,813 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Atualizacao
+2025-02-01 22:29:04,813 - INFO     - [dicionario_dados.py:144] [Consulta: Atualizacao] Tipos ajustados com sucesso.
+2025-02-01 22:29:04,816 - INFO     - [main.py:73] Tabela de atualização criada. Iniciando envio...
+2025-02-01 22:29:04,817 - INFO     - [storage.py:25] Iniciando envio da consulta 'Atualizacao' para 'ambos'.
+2025-02-01 22:29:05,092 - INFO     - [azure_storage.py:202] [Atualizacao] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Atualizacao'.
+2025-02-01 22:29:05,094 - INFO     - [azure_storage.py:283] [Atualizacao] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-01 22:29:05,682 - INFO     - [azure_storage.py:299] [Atualizacao] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:29:05,684 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Atualizacao' enviados para Azure com sucesso.
+2025-02-01 22:29:06,525 - INFO     - [s3_storage.py:226] [Atualizacao] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Atualizacao'.
+2025-02-01 22:29:06,585 - INFO     - [s3_storage.py:302] [Atualizacao] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-01 22:29:07,466 - INFO     - [s3_storage.py:317] [Atualizacao] Upload concluído. Enviados: 1, Erros: 0
+2025-02-01 22:29:07,468 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Atualizacao' enviados para S3 com sucesso.
+2025-02-01 22:29:07,469 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Atualizacao' foram enviados com sucesso.
+2025-02-01 22:29:07,470 - INFO     - [main.py:80] Tabela de atualização enviada com sucesso!
+2025-02-01 22:29:07,788 - INFO     - [main.py:228] Diretório temporário removido.
+2025-02-01 22:29:07,788 - INFO     - [main.py:231] Sistema encerrado às 01/02/2025 22:29:07
