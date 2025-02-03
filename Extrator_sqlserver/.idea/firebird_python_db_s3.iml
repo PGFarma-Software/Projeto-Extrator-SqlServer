@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at F:\Trabalho\ProjetoDadosERP\SqlServer\sqlserver_python_db_consolidado_modularizado\.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at F:\Trabalho\ProjetoDadosERP\SqlServer\Extrator_sqlserver\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
