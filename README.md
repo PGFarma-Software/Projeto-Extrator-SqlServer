@@ -42,7 +42,7 @@ Para rodar o projeto sem a necessidade de instalação do Python na máquina de 
 3. Utilize o arquivo `.exe` gerado para rodar o extrator em qualquer máquina sem necessidade de instalar o Python.
 
 ## Contribuição
-Contribuições são bem-vindas! Caso queira sugerir melhorias ou reportar problemas, abra uma [issue](https://github.com/seu-usuario/Projeto-Extrator-Firebird/issues) ou envie um pull request.
+Contribuições são bem-vindas! Caso queira sugerir melhorias ou reportar problemas, abra uma [issue](https://github.com/seu-usuario/Projeto-Extrator-SqlServer/issues) ou envie um pull request.
 
 ## Licença
 Este projeto está licenciado sob a [MIT License](LICENSE).
