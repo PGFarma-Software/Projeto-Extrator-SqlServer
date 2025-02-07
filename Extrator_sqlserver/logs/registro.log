@@ -1127,3 +1127,18 @@
 2025-02-05 13:48:22,448 - INFO     - [main.py:85] Tabela de atualização enviada com sucesso!
 2025-02-05 13:48:22,474 - INFO     - [main.py:232] Diretório temporário removido.
 2025-02-05 13:48:22,475 - INFO     - [main.py:235] Sistema encerrado às 05/02/2025 13:48:22
+2025-02-07 15:43:19,106 - INFO     - [logging_config.py:91]  Sistema iniciado no modo: local
+2025-02-07 15:43:19,124 - INFO     - [main.py:110] Sistema iniciado às 07/02/2025 15:43:19
+2025-02-07 15:43:19,202 - INFO     - [mongo.py:42] Conectando ao MongoDB...
+2025-02-07 15:43:20,818 - INFO     - [mongo.py:59] Parâmetros obtidos com sucesso do MongoDB para o cliente 'Cliente 21 - Teste Adriano H SqlServer Inovafarma'.
+2025-02-07 15:43:20,983 - INFO     - [mongo.py:75] Conectando ao MongoDB...
+2025-02-07 15:43:22,483 - INFO     - [mongo.py:86] Parâmetros obtidos com sucesso do MongoDB: 1 documentos encontrados.
+2025-02-07 15:43:22,634 - INFO     - [config.py:220] Configurando conexão com o banco de dados a partir dos parâmetros.
+2025-02-07 15:43:22,634 - INFO     - [config.py:241] Configurando numero de workers a partir dos parâmetros.
+2025-02-07 15:43:22,635 - INFO     - [main.py:146] Os dados serão enviados para **Azure Blob Storage** no container 'adriano-teste' e para **Amazon S3** no bucket 'docker-teste'.
+2025-02-07 15:43:22,636 - INFO     - [main.py:149] Executando com 1 threads.
+2025-02-07 15:43:22,636 - INFO     - [database.py:40] Conectando ao banco de dados SQL Server...
+2025-02-07 15:43:26,757 - ERROR    - [database.py:47] Erro ao conectar ao banco de dados SQL Server: (pymssql.exceptions.OperationalError) (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Unknown error (10061)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Unknown error (10061)\n')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-02-07 15:43:26,759 - ERROR    - [main.py:230] Erro na execução principal: (pymssql.exceptions.OperationalError) (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Unknown error (10061)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Unknown error (10061)\n')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
