@@ -3,7 +3,7 @@ import gc
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
-from typing import List, Dict, Tuple, Set
+from typing import List, Dict, Tuple, Set, Optional
 import pyarrow.parquet as pq
 import logging
 import os
@@ -13,39 +13,202 @@ from typing import List, Dict
 import pandas as pd
 import polars as pl
 import pytz
+import sqlalchemy
 from pymssql import OperationalError
 from pymysql import Connection
 from sqlalchemy import create_engine
-
+import pyodbc
 from config import DATABASE_CONFIG, GENERAL_CONFIG, STORAGE_CONFIG
 from dicionario_dados import obter_dicionario_tipos, ajustar_tipos_dados
 from storage import enviar_resultados
 
 
-def conectar_ao_banco(host: str, port: int, database: str, user: str, password: str) -> Connection:
+def obter_versao_sqlserver(host: str, port: int, database: str, user: str, password: str) -> Optional[str]:
     """
-    Estabelece conexão com o banco de dados SQL Server.
+    Obtém a versão do SQL Server conectando-se via ODBC.
+    Tenta usar o primeiro driver disponível que contenha "SQL Server".
 
     Args:
-        host (str): Endereço do servidor SQL Server.
-        port (int): Porta do servidor SQL Server.
+        host (str): Endereço do servidor.
+        port (int): Porta do servidor.
         database (str): Nome do banco de dados.
-        user (str): Nome de usuário para autenticação.
-        password (str): Senha para autenticação.
+        user (str): Nome de usuário.
+        password (str): Senha de acesso.
 
     Returns:
-        sqlalchemy.engine.base.Connection: Objeto de conexão ao banco de dados.
+        Optional[str]: Versão do SQL Server (ex.: "14.0.1000.169") ou None se não for possível obter.
+    """
+    drivers = [driver for driver in pyodbc.drivers() if "SQL Server" in driver]
+    if not drivers:
+        logging.error("Nenhum driver ODBC do SQL Server foi encontrado para obter a versão.")
+        return None
+    # Usa o primeiro driver disponível para tentar obter a versão
+    driver = drivers[0]
+    dsn = (
+        f"DRIVER={{{driver}}};"
+        f"SERVER={host},{port};"
+        f"DATABASE={database};"
+        f"UID={user};"
+        f"PWD={password};"
+        "Connection Timeout=30;"
+    )
+    try:
+        conn = pyodbc.connect(dsn, autocommit=True)
+        cursor = conn.cursor()
+        cursor.execute("SELECT CAST(SERVERPROPERTY('ProductVersion') AS varchar(50));")
+        result = cursor.fetchone()
+        version = result[0] if result else None
+        cursor.close()
+        conn.close()
+        logging.info(f"Versão do SQL Server detectada: {version}")
+        return version
+    except Exception as e:
+        logging.error(f"Erro ao obter a versão do SQL Server: {e}")
+        return None
+
+def detectar_driver_sqlserver(host: str, port: int, database: str, user: str, password: str,
+                                driver_especifico: Optional[str] = None) -> Optional[str]:
+    """
+    Detecta e seleciona o driver ODBC mais adequado para SQL Server disponível no sistema,
+    utilizando a versão do servidor (obtida via obter_versao_sqlserver) para recomendar o driver ideal.
+    Se um driver específico for informado e estiver disponível, ele será utilizado.
+
+    Versões mais usadas de drivers ODBC para SQL Server:
+      - ODBC Driver 17 for SQL Server
+      - ODBC Driver 13 for SQL Server
+      - SQL Server Native Client 11.0
+      - SQL Server Native Client 10.0
+
+    Args:
+        host (str): Endereço do servidor.
+        port (int): Porta.
+        database (str): Nome do banco.
+        user (str): Nome de usuário.
+        password (str): Senha.
+        driver_especifico (Optional[str]): Driver desejado, se fornecido.
+
+    Returns:
+        Optional[str]: Nome do driver adequado ou None.
+    """
+    versao_banco = obter_versao_sqlserver(host, port, database, user, password)
+    if versao_banco:
+        try:
+            major_version = int(versao_banco.split('.')[0])
+        except Exception as e:
+            logging.error(f"Erro ao interpretar a versão do SQL Server: {versao_banco}. Erro: {e}")
+            major_version = None
+    else:
+        major_version = None
+
+    # Lógica de recomendação:
+    # - Se a versão for obtida e major_version >= 14 (SQL Server 2017 ou superior), recomenda "ODBC Driver 17 for SQL Server"
+    # - Se a versão for obtida e major_version >= 10, recomenda "SQL Server Native Client 11.0"
+    # - Caso contrário, recomenda "SQL Server Native Client 10.0"
+    if major_version is None:
+        recommended = None
+    elif major_version >= 14:
+        recommended = "ODBC Driver 17 for SQL Server"
+    elif major_version >= 10:
+        recommended = "SQL Server Native Client 11.0"
+    else:
+        recommended = "SQL Server Native Client 10.0"
+
+    logging.info(f"Driver recomendado para SQL Server versão {versao_banco if versao_banco else 'desconhecida'}: {recommended}")
+
+    # Obtém a lista dos drivers instalados que contenham "SQL Server"
+    drivers = [driver for driver in pyodbc.drivers() if "SQL Server" in driver]
+    drivers.sort(reverse=True)
+
+    if driver_especifico and driver_especifico in drivers:
+        logging.info(f"Usando driver específico solicitado: {driver_especifico}")
+        return driver_especifico
+
+    if recommended and recommended in drivers:
+        logging.info(f"O driver recomendado {recommended} está disponível e será utilizado.")
+        return recommended
+    else:
+        if drivers:
+            logging.error(f"O driver recomendado {recommended} não está disponível. "
+                          f"Utilizando o driver mais recente disponível: {drivers[0]}.")
+            return drivers[0]
+        else:
+            logging.error("Nenhum driver ODBC do SQL Server foi encontrado.")
+            return None
+
+# ------------------------------------------------------------------------------
+# Classe wrapper que cria uma nova conexão para cada cursor via ODBC.
+# Essa abordagem garante que a conexão retorne um cursor iterável, compatível com pandas.
+# ------------------------------------------------------------------------------
+class MultiplexConnection:
+    def __init__(self, dsn: str, autocommit: bool):
+        self._dsn = dsn
+        self._autocommit = autocommit
+
+    def cursor(self):
+        # Cria uma nova conexão ODBC a cada chamada de cursor() e retorna seu cursor.
+        return pyodbc.connect(self._dsn, autocommit=self._autocommit).cursor()
+
+    def close(self):
+        # Como cada cursor abre sua própria conexão, não há conexão persistente para fechar.
+        pass
+
+    def commit(self):
+        pass
+
+    def rollback(self):
+        pass
+
+def conectar_ao_banco(host: str, port: int, database: str, user: str, password: str,
+                        driver_odbc: Optional[str] = None, autocommit: bool = False) -> Optional[object]:
+    """
+    Conecta a um banco de dados SQL Server utilizando ODBC ou SQLAlchemy.
+    Tenta primeiramente via ODBC; se falhar, tenta via SQLAlchemy.
+
+    Args:
+        host (str): Endereço do servidor.
+        port (int): Porta.
+        database (str): Nome do banco.
+        user (str): Nome de usuário.
+        password (str): Senha.
+        driver_odbc (Optional[str]): Driver desejado, se fornecido.
+        autocommit (bool): Define se a conexão ODBC usará autocommit (default: False).
+
+    Returns:
+        Optional[object]: Objeto de conexão se bem-sucedido; caso contrário, None.
     """
     try:
-        logging.info("Conectando ao banco de dados SQL Server...")
-        connection_string = f"mssql+pymssql://{user}:{password}@{host}:{port}/{database}"
-        engine = create_engine(connection_string)
+        logging.info("Tentando conectar ao banco de dados SQL Server via ODBC...")
+        driver = detectar_driver_sqlserver(host, port, database, user, password, driver_especifico=driver_odbc)
+        if driver:
+            dsn = (
+                f"DRIVER={{{driver}}};"
+                f"SERVER={host},{port};"
+                f"DATABASE={database};"
+                f"UID={user};"
+                f"PWD={password};"
+                "MARS_Connection=Yes;"                      # Habilita múltiplos resultados ativos
+                "MultipleActiveResultSets=True;"            # Reforça a opção, se suportado
+                "Connection Timeout=30;"                     # Timeout para evitar conexões pendentes
+                "Pooling=False;"                             # Desabilita o pooling, conforme o modelo
+            )
+            logging.info(f"Conexão multiplexada com o banco de dados SQL Server via ODBC ({driver}) estabelecida com sucesso.")
+            return MultiplexConnection(dsn, autocommit)
+        else:
+            logging.warning("Falha na conexão via ODBC. Tentando via SQLAlchemy...")
+    except pyodbc.Error as e:
+        logging.warning(f"Erro ao conectar via ODBC: {e}. Tentando via SQLAlchemy...")
+
+    try:
+        url_conexao = f"mssql+pymssql://{user}:{password}@{host}:{port}/{database}"
+        engine = create_engine(url_conexao, pool_pre_ping=True, pool_recycle=3600)
         conexao = engine.connect()
-        logging.info("Conexão com o banco de dados SQL Server estabelecida com sucesso.")
+        logging.info("Conexão com o banco de dados SQL Server via SQLAlchemy estabelecida com sucesso.")
         return conexao
+    except sqlalchemy.exc.OperationalError as e:
+        logging.error(f"Erro SQLAlchemy: {e}")
     except Exception as e:
-        logging.error(f"Erro ao conectar ao banco de dados SQL Server: {e}")
-        raise
+        logging.error(f"Erro inesperado ao conectar ao banco de dados: {e}")
+    return None
 
 def fechar_conexao(conexao: Connection):
     """
