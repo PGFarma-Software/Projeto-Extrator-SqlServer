@@ -10,9 +10,9 @@ set PYTHON_313_PATH=.venv\Scripts\python.exe
 set VENV_DIR=.venv
 set BUILD_DIR=build
 set DIST_DIR=dist
-set SPEC_FILE=pgfarma_SqlServer.spec
+set SPEC_FILE=PGLoader_Agente_SqlServer.spec
 set MAIN_SCRIPT=agente.py
-set PROJECT_NAME=pgfarma_SqlServer
+set PROJECT_NAME=PGLoader_Agente_SqlServer
 
 :: Verificar se o Python 3.13 está disponível
 echo Verificando se o Python %PYTHON_VERSION% está instalado...
