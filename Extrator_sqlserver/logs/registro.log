@@ -1142,3 +1142,52 @@
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2025-02-07 15:43:26,759 - ERROR    - [main.py:230] Erro na execução principal: (pymssql.exceptions.OperationalError) (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Unknown error (10061)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (localhost)\nNet-Lib error during Unknown error (10061)\n')
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-02-11 14:05:19,098 - INFO     - [logging_config.py:91]  Sistema iniciado no modo: local
+2025-02-11 14:05:19,117 - INFO     - [main.py:110] Sistema iniciado às 11/02/2025 14:05:19
+2025-02-11 14:05:19,117 - INFO     - [main.py:114] Diretório temporário removido.
+2025-02-11 14:05:19,516 - INFO     - [mongo.py:42] Conectando ao MongoDB...
+2025-02-11 14:05:21,352 - INFO     - [mongo.py:59] Parâmetros obtidos com sucesso do MongoDB para o cliente 'Cliente 21 - Teste Adriano H SqlServer Inovafarma'.
+2025-02-11 14:05:21,520 - INFO     - [mongo.py:75] Conectando ao MongoDB...
+2025-02-11 14:05:23,125 - INFO     - [mongo.py:86] Parâmetros obtidos com sucesso do MongoDB: 1 documentos encontrados.
+2025-02-11 14:05:23,281 - INFO     - [config.py:220] Configurando conexão com o banco de dados a partir dos parâmetros.
+2025-02-11 14:05:23,282 - INFO     - [config.py:241] Configurando numero de workers a partir dos parâmetros.
+2025-02-11 14:05:23,283 - INFO     - [main.py:146] Os dados serão enviados para **Azure Blob Storage** no container 'adriano-teste' e para **Amazon S3** no bucket 'docker-teste'.
+2025-02-11 14:05:23,283 - INFO     - [main.py:149] Executando com 4 threads.
+2025-02-11 14:05:23,284 - INFO     - [database.py:40] Conectando ao banco de dados SQL Server...
+2025-02-11 14:05:23,793 - INFO     - [database.py:44] Conexão com o banco de dados SQL Server estabelecida com sucesso.
+2025-02-11 14:05:23,794 - INFO     - [database.py:134] Executando consulta: Clientes...
+2025-02-11 14:05:25,214 - INFO     - [database.py:140] Consulta 'Clientes' finalizada. Total de registros: 41481
+2025-02-11 14:05:25,215 - INFO     - [database.py:174] Processando dados da consulta 'Clientes'...
+2025-02-11 14:05:25,274 - INFO     - [dicionario_dados.py:54] Dicionário de tipos carregado com sucesso.
+2025-02-11 14:05:25,275 - INFO     - [dicionario_dados.py:63] Dicionário carregado para a consulta: Clientes
+2025-02-11 14:05:25,288 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoCliente' convertida de float64 para int64 automaticamente.
+2025-02-11 14:05:25,297 - INFO     - [dicionario_dados.py:114] Coluna 'CodigoClienteVisual' convertida de float64 para int64 automaticamente.
+2025-02-11 14:05:25,310 - INFO     - [dicionario_dados.py:144] [Consulta: Clientes] Tipos ajustados com sucesso.
+2025-02-11 14:05:25,311 - INFO     - [database.py:207] Salvando 'Clientes' em formato particionado...
+2025-02-11 14:05:25,388 - INFO     - [database.py:217] Salvamento concluído para 'Clientes'. Arquivos disponíveis em: temp\Clientes
+2025-02-11 14:05:25,398 - INFO     - [database.py:95] Consulta 'Clientes' processada em 1.60 segundos.
+2025-02-11 14:05:25,429 - INFO     - [database.py:59] Conexão com o banco de dados fechada.
+2025-02-11 14:05:25,429 - INFO     - [main.py:187] Resumo das consultas concluídas:
+2025-02-11 14:05:25,430 - INFO     - [main.py:189]  - Clientes: temp\Clientes
+2025-02-11 14:05:25,430 - INFO     - [main.py:196] Iniciando envio da consulta 'Clientes'...
+2025-02-11 14:05:25,430 - INFO     - [storage.py:25] Iniciando envio da consulta 'Clientes' para 'ambos'.
+2025-02-11 14:05:25,468 - INFO     - [azure_storage.py:31] Conexão com o Azure inicializada com sucesso (cliente síncrono).
+2025-02-11 14:05:25,487 - INFO     - [s3_storage.py:33] Conexão com o S3 inicializada com sucesso.
+2025-02-11 14:05:26,404 - INFO     - [s3_storage.py:230] [Clientes] Exclusão no nível idEmpresa: idEmpresa: idEmpresa=6790e87bc0cda72dc82a6f35 (1 partição)
+2025-02-11 14:05:26,478 - INFO     - [azure_storage.py:196] [Clientes] Nenhuma partição existente (pertencente à recarga) encontrada para o prefixo 'pgfarma/Clientes'.
+2025-02-11 14:05:26,480 - INFO     - [azure_storage.py:277] [Clientes] Iniciando upload de 1 arquivos para o Azure com 1000 uploads concorrentes...
+2025-02-11 14:05:26,583 - INFO     - [s3_storage.py:244] [Clientes] 1 objetos serão deletados (processo crítico).
+2025-02-11 14:05:26,772 - INFO     - [s3_storage.py:92] [Clientes] Deleção em batch concluída com sucesso para 1 objetos.
+2025-02-11 14:05:26,829 - INFO     - [s3_storage.py:295] [Clientes] Iniciando upload de 1 arquivos para o S3 com 1000 uploads concorrentes...
+2025-02-11 14:05:28,356 - INFO     - [azure_storage.py:293] [Clientes] Upload concluído. Enviados: 1, Erros: 0
+2025-02-11 14:05:28,358 - INFO     - [storage.py:79] Todos os arquivos de 'pgfarma/Clientes' enviados para Azure com sucesso.
+2025-02-11 14:05:29,847 - INFO     - [s3_storage.py:310] [Clientes] Upload concluído. Enviados: 1, Erros: 0
+2025-02-11 14:05:29,849 - INFO     - [storage.py:98] Todos os arquivos de 'pgfarma/Clientes' enviados para S3 com sucesso.
+2025-02-11 14:05:29,850 - INFO     - [storage.py:61] Todos os arquivos de 'pgfarma/Clientes' foram enviados com sucesso.
+2025-02-11 14:05:29,850 - INFO     - [main.py:205] Consulta 'Clientes' enviada com sucesso.
+2025-02-11 14:05:29,852 - INFO     - [main.py:217] Resumo do envio: 1 consultas enviadas com sucesso, 0 falhas.
+2025-02-11 14:05:29,852 - INFO     - [main.py:223] Todas as consultas foram enviadas com sucesso. Prosseguindo com a tabela de atualização...
+2025-02-11 14:05:29,853 - INFO     - [main.py:54] A tabela de atualização NÃO será enviada, pois nem todas as consultas foram processadas com sucesso.
+ou a opção de consulta unica foi selecionada.
+2025-02-11 14:05:29,854 - INFO     - [main.py:241] Diretório temporário removido.
+2025-02-11 14:05:29,854 - INFO     - [main.py:244] Sistema encerrado às 11/02/2025 14:05:29

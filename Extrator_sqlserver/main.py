@@ -153,7 +153,7 @@ def main():
             logging.error("Nenhuma consulta configurada.")
             return
 
-        consulta_desejada = ""  # Defina um nome para filtrar uma consulta específica
+        consulta_desejada = "Clientes"  # Defina um nome para filtrar uma consulta específica
         if consulta_desejada:
             consultas = [c for c in consultas if c.get("name") == consulta_desejada]
             if not consultas:

@@ -11,7 +11,7 @@ set VENV_DIR=.venv
 set BUILD_DIR=build
 set DIST_DIR=dist
 set SPEC_FILE=pgfarma_SqlServer.spec
-set MAIN_SCRIPT=main.py
+set MAIN_SCRIPT=agente.py
 set PROJECT_NAME=pgfarma_SqlServer
 
 :: Verificar se o Python 3.13 está disponível
@@ -67,9 +67,9 @@ echo Gerando o executável com PyInstaller...
 %VENV_DIR%\Scripts\python.exe -m PyInstaller ^
     --clean ^
     --onefile ^
-    --noconsole ^
     --add-data "config;config" ^
     --add-data "dicionarios_tipos.json;." ^
+    --add-data "main.py;." ^
     --hidden-import pymssql ^
     --hidden-import polars-lts-cpu ^
     --hidden-import aioboto3 ^
