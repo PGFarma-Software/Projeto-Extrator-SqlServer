@@ -67,6 +67,7 @@ echo Gerando o executável com PyInstaller...
 %VENV_DIR%\Scripts\python.exe -m PyInstaller ^
     --clean ^
     --onefile ^
+     --noconsole ^
     --add-data "config;config" ^
     --add-data "dicionarios_tipos.json;." ^
     --add-data "main.py;." ^
