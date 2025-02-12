@@ -40,9 +40,12 @@ configurador.configurar_logging()
 
 app = Flask(__name__)
 
+
+load_dotenv(dotenv_path="config/config.env")
+
 # Identificação e endereço do servidor
-ID_MAQUINA = "PGFAMRA_CLIENTE_21_TESTE"
-URL_SERVIDOR = "http://191.55.227.8:5000/api"
+ID_MAQUINA = os.getenv("ID_MAQUINA")
+URL_SERVIDOR = os.getenv("URL_SERVIDOR")
 
 # Estado do sistema controlado pelo agente
 status_sistema = {"status": "parado", "id": ID_MAQUINA}
